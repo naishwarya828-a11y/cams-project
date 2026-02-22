@@ -1,7 +1,12 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "cams_db");
+$servername="localhost";
+$username="root";
+$password="";
+$database="cams_db";
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$conn=new mysqli($servername,$username,$password,$database);
+
+if($conn->connect_error){
+die("Connection Failed");
 }
 ?>

@@ -5,6 +5,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $role = $_POST['role'];
 
+
 $sql = "SELECT * FROM users 
         WHERE email='$email'
         AND password='$password'
@@ -12,9 +13,7 @@ $sql = "SELECT * FROM users
 
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    echo "Login Successful";
-} else {
-    echo "Invalid Login";
-}
+header("Location: dashboard.php");
+exit();
+ 
 ?>
