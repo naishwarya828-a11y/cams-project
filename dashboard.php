@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-/* check login */
-if(!isset($_SESSION['user'])){
-    header("Location: login.html");
+if(!isset($_SESSION['email']))
+{
+    header("Location: login.php");
     exit();
 }
 ?>
@@ -17,31 +17,21 @@ if(!isset($_SESSION['user'])){
 
 <body>
 
-    <h2>Welcome to Classroom Management System</h2>
+<div class="dashboard">
 
-    <h3>Select Your Role</h3>
+    <h1>Welcome <?php echo $_SESSION['role']; ?> 🎓</h1>
 
-    <div class="container">
+    <p><?php echo $_SESSION['email']; ?></p>
 
-        <a href="floor.php?role=student">
-            <button class="role-btn">Student</button>
-        </a>
+    <div class="menu">
 
-        <a href="floor.php?role=teacher">
-            <button class="role-btn">Teacher</button>
-        </a>
+        <a href="floor.php">Select Classroom Floor</a>
 
-        <a href="floor.php?role=admin">
-            <button class="role-btn">Admin</button>
-        </a>
+        <a href="logout.php">Logout</a>
 
     </div>
 
-    <br><br>
-
-    <a href="logout.php">
-        <button class="logout-btn">Logout</button>
-    </a>
+</div>
 
 </body>
 </html>

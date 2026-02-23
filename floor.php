@@ -1,24 +1,40 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['email']))
+{
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Select Floor</title>
+<title>Select Floor</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h2>Select Floor</h2>
+<div class="floor-container">
 
-<a href="classrooms.php?floor=1">
-<button>Floor 1</button>
-</a>
+<h1>Select Floor</h1>
 
-<a href="classrooms.php?floor=2">
-<button>Floor 2</button>
-</a>
+<div class="floor-cards">
 
-<a href="classrooms.php?floor=3">
-<button>Floor 3</button>
-</a>
+<a href="classrooms.php?floor=1" class="floor-card">Floor 1</a>
+
+<a href="classrooms.php?floor=2" class="floor-card">Floor 2</a>
+
+<a href="classrooms.php?floor=3" class="floor-card">Floor 3</a>
+
+</div>
+
+<br>
+<a href="dashboard.php" class="back-btn">⬅ Back</a>
+
+</div>
 
 </body>
 </html>
