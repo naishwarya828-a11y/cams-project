@@ -2,32 +2,30 @@
 <html>
 <head>
 <title>CAMS Login</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h2>Classroom Management System</h2>
+<div class="login-box">
+<h2>CAMS Login</h2>
 
 <form action="login.php" method="POST">
 
-Email:
-<input type="email" name="email" required><br><br>
+<input type="email" name="email" placeholder="Enter Email" required>
 
-Password:
-<input type="password" name="password" required><br><br>
+<input type="password" name="password" placeholder="Enter Password" required>
 
-Role:
 <select name="role">
 <option value="student">Student</option>
 <option value="teacher">Teacher</option>
 <option value="admin">Admin</option>
 </select>
 
-<br><br>
-
 <button type="submit">Login</button>
 
 </form>
+</div>
 
 </body>
 </html>
